@@ -1,0 +1,28 @@
+{
+  "name": "twitchcomfykit",
+  "version": "1.0.0",
+  "description": "Twitch Extensions Starter Kit",
+  "main": "app.js",
+  "scripts": {
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "package": "node comfypackager.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/instafluff/TwitchComfyKit.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/instafluff/TwitchComfyKit/issues"
+  },
+  "homepage": "https://github.com/instafluff/TwitchComfyKit#readme",
+  "devDependencies": {},
+  "dependencies": {
+    "archiver": "^3.0.0",
+    "connect": "^3.6.6",
+    "dotenv": "^6.1.0",
+    "serve-static": "^1.13.2"
+  }
+}
