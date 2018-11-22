@@ -6,18 +6,14 @@
     <body>
         <div id="app" class="full-height"></div>
         <script src="https://extension-files.twitch.tv/helper/v1/twitch-ext.min.js"></script>
-      <script src="https://localhost.rig.twitch.tv:3000/twitch-ext.js"></script>
-      
+        <script src="https://localhost.rig.twitch.tv:3000/twitch-ext.js"></script>
         <script src="https://extension-files.twitch.tv/live-extensions/jquery.min.js"></script>
+        <script src="clipboard.min.js"></script>
         <script src="comfykit.js"></script>
-        <h2>Hello, World!</h2>
-        <p>Would you care to cycle a color?</p>
-        <div>
-            <input type="button" id="cycle"  value="Yes, I would" />
+        <div id="clippy_panel">
+            <button id="clippy_subraid" class="btn myButton" data-clipboard-text="">Sub Raid</button>
+            <button id="clippy_raid" class="btn myButton" data-clipboard-text="">Raid</button>
+            <h2 id="clippy_copysuccess">Copied to Clipboard!</h2>
         </div>
-        <div id="color-container">
-            <div id="color"></div>
-        </div>
-        <div id="list"></div>
     <script src="viewer.js"></script></body>
 </html>

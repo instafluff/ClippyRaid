@@ -99,15 +99,21 @@ var userContext = {
 twitch.onContext(function(context, props) {
   // "props" contains an array of strings naming the context properties that were changed.
   userContext = context;
-  console.log( "Context:", userContext );
+  // console.log( "Context:", userContext );
+  if( userContext.theme == "dark" ) {
+    $("body").css("color", "white");
+  }
+  else {
+    $("body").css("color", "black");
+  }
 
   if( userContext.arePlayerControlsVisible ) {
     // $("#clippy").show();
-    $("#clippy").fadeIn(500);
+    $("#clippy_component").fadeIn(500);
   }
   else {
     // $("#clippy").hide();
-    $("#clippy").fadeOut(500);
+    $("#clippy_component").fadeOut(500);
   }
 });
 
@@ -152,6 +158,18 @@ const configChannel = twitch.configuration[ "broadcaster" ];
 twitch.configuration.onChanged( function() {
   // Called when Ext Configuration is updated
   console.log( "Configuration Updated" );
+  try {
+    let config = twitch.configuration.broadcaster ?
+      JSON.parse(twitch.configuration.broadcaster.content) : {};
+    console.log( config );
+    $("#msg").val( config["message"] || "" );
+    $("#submsg").val( config["submessage"] || "" );
+    $("#clippy_raid").attr("data-clipboard-text", config["message"] || "");
+    $("#clippy_subraid").attr("data-clipboard-text", config["submessage"] || "");
+  }
+  catch( e ) {
+    console.log( "no config" );
+  }
 });
 console.log( "Global Config:", configGlobal );
 console.log( "Developer Config:", configDev );
