@@ -37,11 +37,16 @@ twitch.onAuthorized(function(auth) {
   $("#save-config").click(function () {
     console.log( "Saving Config!");
     setChannelConfig("0.0.1", JSON.stringify({
-      message: $("#msg").val(),
-      submessage: $("#submsg").val()
+      message: DOMPurify.sanitize( $("#msg").val() ),
+      submessage: DOMPurify.sanitize( $("#submsg").val() )
     }));
+    $("#clippy_savesuccess").show();
+    setTimeout(function() {
+      $("#clippy_savesuccess").hide();
+    }, 2000);
   });
 
+  $("#clippy_savesuccess").hide();
   $("#clippy_copysuccess").hide();
   var clipboard = new ClipboardJS('.myButton');
 
@@ -162,10 +167,16 @@ twitch.configuration.onChanged( function() {
     let config = twitch.configuration.broadcaster ?
       JSON.parse(twitch.configuration.broadcaster.content) : {};
     console.log( config );
-    $("#msg").val( config["message"] || "" );
-    $("#submsg").val( config["submessage"] || "" );
-    $("#clippy_raid").attr("data-clipboard-text", config["message"] || "");
-    $("#clippy_subraid").attr("data-clipboard-text", config["submessage"] || "");
+    if( !config["message"] ) {
+      $("#clippy_raid").hide();
+    }
+    if( !config["submessage"] ) {
+      $("#clippy_subraid").hide();
+    }
+    $("#msg").val( DOMPurify.sanitize( config["message"] || "" ) );
+    $("#submsg").val( DOMPurify.sanitize( config["submessage"] || "" ) );
+    $("#clippy_raid").attr( "data-clipboard-text", DOMPurify.sanitize( config["message"] || "" ) );
+    $("#clippy_subraid").attr( "data-clipboard-text", DOMPurify.sanitize( config["submessage"] || "" ) );
   }
   catch( e ) {
     console.log( "no config" );

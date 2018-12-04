@@ -6,18 +6,21 @@
     <body>
         <div id="app" class="full-height"></div>
         <script src="https://extension-files.twitch.tv/helper/v1/twitch-ext.min.js"></script>
-      <script src="https://localhost.rig.twitch.tv:3000/twitch-ext.js"></script>
 
         <script src="https://extension-files.twitch.tv/live-extensions/jquery.min.js"></script>
         <script src="clipboard.min.js"></script>
+        <script src="purify.min.js"></script>
         <script src="comfykit.js"></script>
         <h2>Raid Message Configuration</h2>
         <div>
           <label for="submsg">Subscriber Raid Message:</label>
           <input id="submsg" type="text" value="" placeholder="Sub Raid Message" />
+          <br/>
           <label for="msg">Normal Raid Message:</label>
           <input id="msg" type="text" value="" placeholder="Raid Message" />
           <br/>
+          <br/>
+          <p id="clippy_savesuccess">Saved!</p>
           <input type="button" class="btn myButton" id="save-config" value="Save" />
         </div>
     <script src="viewer.js"></script></body>
