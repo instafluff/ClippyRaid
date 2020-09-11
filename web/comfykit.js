@@ -7,32 +7,32 @@ var userAuth = {
   userId: "" // Opaque user ID (a globally unique ID that isn't the user's actual twitch ID)
              //    this will be called again with the actual Twitch ID after calling twitch.actions.requestIdShare()
 };
-var channelInfo = {};
+// var channelInfo = {};
 
 twitch.onAuthorized(function(auth) {
   // This callback is fired each time the JWT is refreshed.
   userAuth = auth;
-  console.log( "The JWT that will be passed to the EBS is", auth.token );
-  console.log( "The channel ID is", auth.channelId );
+  // console.log( "The JWT that will be passed to the EBS is", auth.token );
+  // console.log( "The channel ID is", auth.channelId );
   // WARNING: logging this object is not recommended in production
   // console.log( "UserAuth:", userAuth );
-
-  // Retrieve info about the stream
-  if( userAuth[ "clientId" ] ) {
-    $.ajax({
-      url: "https://api.twitch.tv/helix/users?id=" + userAuth[ "channelId" ],
-      type: "GET",
-      headers: {
-        "Client-ID": userAuth[ "clientId" ]
-      },
-      success: function( result ) {
-        if( result[ "data" ].length > 0 ) {
-          channelInfo = result[ "data" ][ 0 ];
-          console.log( "Channel:", channelInfo );
-        }
-      }
-    });
-  }
+  //
+  // // Retrieve info about the stream
+  // if( userAuth[ "clientId" ] ) {
+  //   $.ajax({
+  //     url: "https://api.twitch.tv/helix/users?id=" + userAuth[ "channelId" ],
+  //     type: "GET",
+  //     headers: {
+  //       "Client-ID": userAuth[ "clientId" ]
+  //     },
+  //     success: function( result ) {
+  //       if( result[ "data" ].length > 0 ) {
+  //         channelInfo = result[ "data" ][ 0 ];
+  //         console.log( "Channel:", channelInfo );
+  //       }
+  //     }
+  //   });
+  // }
 
   $("#save-config").click(function () {
     console.log( "Saving Config!");
@@ -48,7 +48,7 @@ twitch.onAuthorized(function(auth) {
 
   $("#clippy_savesuccess").hide();
   $("#clippy_copysuccess").hide();
-  var clipboard = new ClipboardJS('.myButton');
+  var clipboard = new ClipboardJS('.clippybtn');
 
   clipboard.on('success', function(e) {
       console.info('Action:', e.action);
@@ -110,15 +110,6 @@ twitch.onContext(function(context, props) {
   }
   else {
     $("body").css("color", "black");
-  }
-
-  if( userContext.arePlayerControlsVisible ) {
-    // $("#clippy").show();
-    $("#clippy_component").fadeIn(500);
-  }
-  else {
-    // $("#clippy").hide();
-    $("#clippy_component").fadeOut(500);
   }
 });
 

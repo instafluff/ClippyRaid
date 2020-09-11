@@ -20,9 +20,8 @@
   "homepage": "https://github.com/instafluff/TwitchComfyKit#readme",
   "devDependencies": {},
   "dependencies": {
-    "archiver": "^3.0.0",
-    "connect": "^3.6.6",
-    "dotenv": "^6.1.0",
-    "serve-static": "^1.13.2"
+    "archiver": "^3.1.1",
+    "dotenv": "^6.2.0",
+    "webwebweb": "^1.4.0"
   }
 }

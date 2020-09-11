@@ -24,5 +24,5 @@ archive.on( "error", ( err ) => {
 });
 
 archive.pipe( output );
-archive.directory( "your_files/", false );
+archive.directory( "web/", false );
 archive.finalize();

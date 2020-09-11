@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ClippyRaid!</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <link rel="stylesheet" href="viewer.css" type="text/css">
+	</head>
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <body>
+        <div id="app" class="full-height"></div>
+        <script src="https://extension-files.twitch.tv/helper/v1/twitch-ext.min.js"></script>
+        <script src="jquery-3.5.1.min.js"></script>
+        <script src="clipboard.min.js"></script>
+        <script src="purify.min.js"></script>
+        <script src="comfykit.js"></script>
+		<div id="clippy_panel" class="center-container">
+			<div class="same-row center">
+		        <button id="clippy_subraid" class="no-border clippybtn btn-hover-effect btn-hover-effect--effect-5" data-clipboard-text="">Sub Raid</button>
+		        <button id="clippy_raid" class="no-border clippybtn btn-hover-effect btn-hover-effect--effect-5" data-clipboard-text="">Raid</button>
+			</div>
+	        <p id="clippy_copysuccess">Copied to Clipboard!</p>
+        </div>
+    <script src="viewer.js"></script></body>
+</html>

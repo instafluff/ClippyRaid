@@ -1,0 +1,488 @@
+body {
+    background-color: rgba(255,200,112, 0.5);
+    font-family: 'Josefin Sans', sans-serif;
+	display:grid; place-items:center;
+}
+
+.center-container {
+  text-align: center;
+}
+
+.center {
+    margin: auto;
+	justify-content:center;
+}
+
+.myButton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #fff6af;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #fff6af;
+	box-shadow:inset 0px 1px 0px 0px #fff6af;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffec64), color-stop(1, #ffab23));
+	background:-moz-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+	background:-webkit-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+	background:-o-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+	background:-ms-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+	background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffec64', endColorstr='#ffab23',GradientType=0);
+	background-color:#ffec64;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #ffaa22;
+	display:inline-block;
+	cursor:pointer;
+	color:#701c6a;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 12px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffee66;
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffab23), color-stop(1, #ffec64));
+	background:-moz-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+	background:-webkit-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+	background:-o-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+	background:-ms-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+	background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffab23', endColorstr='#ffec64',GradientType=0);
+	background-color:#ffab23;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+.same-row {
+	display: flex;
+}
+
+.no-border {
+	border: none;
+}
+
+.btn-hover-effect {
+  margin-left: 2px;
+  margin-right: 2px;
+  display: -webkit-box;
+  display: flex;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 15px;
+  color: #fff;
+  letter-spacing: 1px;
+  line-height: 1;
+  background-color: #D78521;
+}
+
+/* effects styles !!!YOU NEED THEM */
+/* don't forget to add your own background-color and text color */
+.btn-hover-effect {
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  position: relative;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  padding: 8px 8px;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  text-decoration: none;
+  overflow: hidden;
+}
+
+/* effect 1 styles */
+.btn-hover-effect--effect-1 {
+  /* overlay block styles */
+  /* icon styles */
+}
+.btn-hover-effect--effect-1:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  display: block;
+  width: 100%;
+  height: 100%;
+  content: '';
+  background-color: rgba(255, 255, 255, 0.2);
+  -webkit-transform: scale(0, 1);
+          transform: scale(0, 1);
+  -webkit-transform-origin: right top;
+          transform-origin: right top;
+  z-index: -1;
+}
+.btn-hover-effect--effect-1:after {
+  position: absolute;
+  top: 1px;
+  right: -40px;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  height: 100%;
+  width: 40px;
+  content: '\f105';
+  font-family: "Font Awesome 5 Free";
+  font-size: 25px;
+  font-weight: 900;
+  line-height: inherit;
+  opacity: 0;
+}
+.btn-hover-effect--effect-1:hover {
+  padding-left: 26px;
+  padding-right: 46px;
+}
+.btn-hover-effect--effect-1:hover:before {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+  -webkit-transform-origin: left top;
+          transform-origin: left top;
+}
+.btn-hover-effect--effect-1:hover:after {
+  right: 0;
+  opacity: 1;
+}
+
+/* effect #2 */
+.btn-hover-effect--effect-2 {
+  /* overlay styles */
+  /* icon styles */
+}
+.btn-hover-effect--effect-2:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  display: block;
+  width: 200%;
+  height: 200%;
+  content: '';
+  -webkit-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+  -webkit-transform-origin: center top;
+          transform-origin: center top;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  z-index: -1;
+}
+.btn-hover-effect--effect-2:after {
+  position: absolute;
+  top: 1px;
+  right: 0;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  height: 100%;
+  width: 40px;
+  content: '\f105';
+  font-family: "Font Awesome 5 Free";
+  font-size: 25px;
+  font-weight: 900;
+  line-height: inherit;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  opacity: 0;
+}
+.btn-hover-effect--effect-2:hover {
+  padding-left: 26px;
+  padding-right: 46px;
+}
+.btn-hover-effect--effect-2:hover:before {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  -webkit-transform-origin: center bottom;
+          transform-origin: center bottom;
+}
+.btn-hover-effect--effect-2:hover:after {
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+}
+
+/* effect #3 */
+.btn-hover-effect--effect-3 {
+  /* overlay styles */
+  /* icon styles */
+}
+.btn-hover-effect--effect-3:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  display: block;
+  width: 100%;
+  height: 100%;
+  content: '';
+  -webkit-transform: scale(1, 0);
+          transform: scale(1, 0);
+  -webkit-transform-origin: center bottom;
+          transform-origin: center bottom;
+  background-color: rgba(255, 255, 255, 0.15);
+  z-index: -1;
+}
+.btn-hover-effect--effect-3:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+  content: '\f30b';
+  font-family: "Font Awesome 5 Free";
+  font-size: 30px;
+  font-weight: 900;
+  line-height: inherit;
+  color: transparent;
+  -webkit-transform: scale(1, 0);
+          transform: scale(1, 0);
+  -webkit-transform-origin: center bottom;
+          transform-origin: center bottom;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.btn-hover-effect--effect-3:hover {
+  color: transparent;
+}
+.btn-hover-effect--effect-3:hover:before {
+  -webkit-transition-duration: .15s;
+          transition-duration: .15s;
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+  -webkit-transform-origin: center top;
+          transform-origin: center top;
+}
+.btn-hover-effect--effect-3:hover:after {
+  -webkit-transition-duration: .15s;
+          transition-duration: .15s;
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+  -webkit-transform-origin: center top;
+          transform-origin: center top;
+  color: #fff;
+}
+
+/* effect #4 */
+.btn-hover-effect--effect-4 {
+  /* overlay styles */
+  /* icon styles */
+}
+.btn-hover-effect--effect-4:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  display: block;
+  width: 300%;
+  height: 300%;
+  content: '';
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  z-index: -1;
+}
+.btn-hover-effect--effect-4:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+  content: '\f30b';
+  font-family: "Font Awesome 5 Free";
+  font-size: 30px;
+  font-weight: 900;
+  line-height: inherit;
+  color: transparent;
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+}
+.btn-hover-effect--effect-4:hover {
+  color: transparent;
+}
+.btn-hover-effect--effect-4:hover:before {
+  -webkit-transform: scale(2);
+          transform: scale(2);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+.btn-hover-effect--effect-4:hover:after {
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+  color: #fff;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+/* effect #5 */
+.btn-hover-effect--effect-5 {
+  /* overlay styles */
+  /* icon styles */
+}
+.btn-hover-effect--effect-5:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  display: block;
+  width: 300px;
+  height: 300px;
+  content: '';
+  -webkit-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  z-index: -1;
+}
+.btn-hover-effect--effect-5:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transition: opacity .2s linear .2s, -webkit-transform .2s linear .2s;
+  transition: opacity .2s linear .2s, -webkit-transform .2s linear .2s;
+  transition: transform .2s linear .2s, opacity .2s linear .2s;
+  transition: transform .2s linear .2s, opacity .2s linear .2s, -webkit-transform .2s linear .2s;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  width: 300px;
+  height: 300px;
+  content: 'Copy';
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 900;
+  line-height: inherit;
+  color: transparent;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  opacity: 0;
+  z-index: -1;
+}
+.btn-hover-effect--effect-5:hover {
+  color: transparent;
+}
+.btn-hover-effect--effect-5:hover:before {
+  -webkit-transition-duration: .15s;
+          transition-duration: .15s;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+.btn-hover-effect--effect-5:hover:after {
+  -webkit-transition-duration: .15s;
+          transition-duration: .15s;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  color: #fff;
+}
